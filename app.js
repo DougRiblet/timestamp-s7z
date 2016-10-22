@@ -13,7 +13,11 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:id', function(req, res) {
-  res.send('parameter = ' + req.params.id);
+	if (moment(req.params.id).isValid()) {
+		res.send('valid parameter = ' + req.params.id);
+	} else {
+		res.send('invalid parameter = ' + req.params.id);
+	}
 });
 
 
