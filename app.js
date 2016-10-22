@@ -22,6 +22,7 @@ app.get('/:id', function(req, res) {
 	var unixFormat = newMoment ? moment(newMoment).format("X") : null;
 	var naturalFormat = newMoment ? moment(newMoment).format("MMMM D, YYYY") : null;
 
+	res.json({ 'unix': unixFormat, 'natural': naturalFormat });
 });
 
 
