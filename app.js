@@ -18,7 +18,7 @@ app.get('/:id', function(req, res) {
 		var newMoment;
 		if (moment(new Date(req.params.id)).isValid()) {
 			newMoment = moment(new Date(req.params.id));
-		} else if (moment(req.params.id, "X").isValid()) {
+		} else if (moment(req.params.id, "X", true).isValid()) {
 			newMoment = moment(req.params.id, "X");
 		}
 		var unixFormat = newMoment ? moment(newMoment).format("X") : null;
