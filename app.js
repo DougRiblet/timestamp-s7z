@@ -14,17 +14,17 @@ app.get('/favicon.ico', function(req, res) {
 });
 
 app.get('/:id', function(req, res) {
-	if (req.params.id.length) {
-		var newMoment;
-		if (moment(new Date(req.params.id)).isValid()) {
-			newMoment = moment(new Date(req.params.id));
-		} else if (moment(req.params.id, "X", true).isValid()) {
-			newMoment = moment(req.params.id, "X");
-		}
-		var unixFormat = newMoment ? moment(newMoment).format("X") : null;
-		var naturalFormat = newMoment ? moment(newMoment).format("MMMM D, YYYY") : null;
-		res.json({ 'unix': unixFormat, 'natural': naturalFormat });
-	}
+  if (req.params.id.length) {
+    var newMoment;
+    if (moment(new Date(req.params.id)).isValid()) {
+      newMoment = moment(new Date(req.params.id));
+    } else if (moment(req.params.id, "X", true).isValid()) {
+      newMoment = moment(req.params.id, "X");
+    }
+    var unixFormat = newMoment ? moment(newMoment).format("X") : null;
+    var naturalFormat = newMoment ? moment(newMoment).format("MMMM D, YYYY") : null;
+    res.json({ 'unix': unixFormat, 'natural': naturalFormat });
+  }
 });
 
 app.listen(port, function () {
