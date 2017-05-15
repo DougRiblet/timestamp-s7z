@@ -4,11 +4,14 @@
   "description": "Timestamp API microservice",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "author": "Doug Riblet",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smashzen/timestamp-s7z.git"
+  },
   "dependencies": {
     "express": "^4.14.0",
     "moment": "^2.15.1"
