@@ -1,9 +1,19 @@
-var assert = require('chai').assert
+var chai = require('chai')
+var chaiHttp = require('chai-http');
 
-describe('Array', function() {
-  describe('#indexOf()', function() {
-    it('should return -1 when the value is not present', function() {
-      assert.equal(-1, [1,2,3].indexOf(4));
-    });
+var server = require('../app');
+
+var expect = chai.expect;
+chai.use(chaiHttp);
+
+describe('Submissions', function(){
+  it('should return 200 status code for / GET', function(done){
+    chai.request(server)
+      .get('/')
+      .end(function(err, res){
+        expect(err).to.be.null;
+        expect(res).to.have.status(200);
+        done();
+      });
   });
 });

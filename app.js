@@ -30,3 +30,5 @@ app.get('/:id', function(req, res) {
 app.listen(port, function () {
   console.log('Timestamp app listening on port ' + port);
 });
+
+module.exports = app;
